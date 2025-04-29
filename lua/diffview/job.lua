@@ -49,7 +49,7 @@ local M = {}
 local Job = oop.create_class("Job", async.Waitable)
 
 local function prepare_env(env)
-  local ret = {}
+  local ret = {"GIT_OPTIONAL_LOCKS=0"}
 
   for k, v in pairs(env) do
     table.insert(ret, k .. "=" .. v)
